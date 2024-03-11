@@ -18,14 +18,25 @@ npm i tailwind-inview
 
 ## Usage 🛠️
 
-To get started, import the `InviewSensor` from the `tailwind-inview` package and use it within your React components.
+To get started, add the plugin in your project's `tailwind.config.js/ts`
 
-```javascript
+```ts
+import inviewPlugin from 'tailwind-inview';
+
+// ...
+plugins: [..., inviewPlugin]
+//...
+
+```
+
+Then import the `InviewSensor` from the `tailwind-inview` package and use it within your React components.
+
+```tsx
 import React, { useEffect } from "react";
 import { InviewSensor } from "tailwind-inview";
 
 const Component = () => {
-  useEffect(() => inViewSensor(), []);
+  useEffect(inViewSensor, []);
 
   return (
     <h1 className="inview:animate-bounce repeat-1">Animated On Scroll Text</h1>

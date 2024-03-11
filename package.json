@@ -1,6 +1,6 @@
 {
   "name": "tailwind-inview",
-  "version": "1.0.8",
+  "version": "1.0.11",
   "description": "The easiest way to animate your Tailwind React Components on scroll. Add life to your web app with simple yet powerful animations.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

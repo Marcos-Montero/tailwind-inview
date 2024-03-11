@@ -1,6 +1,6 @@
 import plugin from "tailwindcss/plugin";
 
-export class Inview {
+class Inview {
   private observers: IntersectionObserver[];
 
   constructor() {
@@ -35,4 +35,20 @@ const inviewplugin = plugin(({ addVariant }) => {
   addVariant("inview", "&:not([no-inview])");
 });
 
+/**
+ * This function should be used inside a useEffect
+ * ```typescript
+ * // Syntax
+ * useEffect(inViewSensor, [])
+ *```
+ * @returns A cleanup function that stops the inview detection.
+ */
+export const inViewSensor = () => {
+  const inview = new Inview();
+  return () => {
+    inview.stop();
+  };
+};
+
+// Plugin
 export default inviewplugin;
